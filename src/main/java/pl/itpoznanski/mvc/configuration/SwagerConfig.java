@@ -11,10 +11,12 @@ import springfox.documentation.spring.web.plugins.Docket;
 import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
 import java.util.Collections;
-
+//konfiguracja Swagera
 @Configuration
 @EnableSwagger2
 public class SwagerConfig {
+    //pod jakim endpointem i z jakiej paczki ma sie wyswietlac endpoint na Swager UI oraz dokumentacji.
+    //Wywolanie metody createapiinfo
     @Bean
     public Docket docket() {
         return new Docket(DocumentationType.SWAGGER_2)

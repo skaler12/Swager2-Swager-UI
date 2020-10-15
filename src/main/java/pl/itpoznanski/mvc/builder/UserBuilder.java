@@ -1,8 +1,9 @@
 package pl.itpoznanski.mvc.builder;
 
 import pl.itpoznanski.mvc.entity.User;
-
+//builder klasy User, wzorzec kreacyjny
 public class UserBuilder {
+    //instancja statyczna klasy UserBuilder
     private static UserBuilder instance =new UserBuilder();
     private String id = null;
     private String description="";
@@ -12,6 +13,7 @@ public class UserBuilder {
     private UserBuilder(){
 
     }
+    //zwrocenie instancji klasy UserBuilder
     public static UserBuilder create(){
         return instance;
     }
@@ -31,6 +33,7 @@ public class UserBuilder {
         this.age=age;
         return instance;
     }
+    //stworzenie klasy User przez buildera
     public User build(){
         User result = new User(this.id, this.description, this.age,this.name);
         if(id != null)

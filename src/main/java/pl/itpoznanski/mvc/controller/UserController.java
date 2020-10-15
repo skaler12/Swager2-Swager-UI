@@ -20,7 +20,7 @@ import java.net.URI;
 @RequestMapping("/api")
 public class UserController {
     private UserRepo<User> repository;
-
+    //zainicjalizawanie pola repository w konstruktorze
     @Autowired
     public UserController(UserRepo<User> repository) {
         this.repository = repository;
@@ -71,6 +71,7 @@ public class UserController {
         repository.delete(UserBuilder.create().witdId(id).build());
         return ResponseEntity.noContent().build();
     }
+    //obsługa błędów Http z matod klasy ResponseEntity
     @ExceptionHandler
     @ResponseStatus(value = HttpStatus.BAD_REQUEST)
     public UserValidationError handleException(Exception exception) {

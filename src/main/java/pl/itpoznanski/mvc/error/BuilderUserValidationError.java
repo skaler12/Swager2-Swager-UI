@@ -2,7 +2,7 @@ package pl.itpoznanski.mvc.error;
 
 import org.springframework.validation.Errors;
 import org.springframework.validation.ObjectError;
-
+//builder klasy UserValidatinError
 public class BuilderUserValidationError {
     public static UserValidationError fromBindingErrors(Errors errors) {
         UserValidationError error = new UserValidationError("Validation"
